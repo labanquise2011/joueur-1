@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Énigme Joueur 1</title>
+</head>
+<body>
+  <h1>Énigme pour le Joueur 1</h1>
+  <p>Entrez le code PIN à 4 chiffres :</p>
+  <input type="text" id="codePIN">
+  <button onclick="verifierCodePIN()">Valider</button>
+
+  <div id="etape2" style="display:none;"> 
+    <p>Votre code à communiquer au Joueur 2 : <b>3256</b></p> 
+    <p>Entrez le code reçu du Joueur 2 :</p>
+    <input type="text" id="codeJoueur2">
+    <button onclick="verifierCodeRecu()">Valider</button>
+  </div>
+
+  <script>
+    function verifierCodePIN() {
+      var codeSaisi = document.getElementById("codePIN").value;
+
+      if (codeSaisi === "3569") { 
+        alert("Bravo ! Le code PIN est correct. Vous pouvez passer à l'étape suivante.");
+        document.getElementById("codePIN").style.display = "none"; 
+        document.getElementById("etape2").style.display = "block"; 
+      } else {
+        alert("Code PIN incorrect. Réessayez !");
+      }
+    }
+
+    function verifierCodeRecu() {
+      var codeRecu = document.getElementById("codeJoueur2").value;
+
+      if (codeRecu === "1189") { 
+        alert("Bravo ! Le code reçu est correct. Vous pouvez passer à l'étape suivante."); 
+      } else {
+        alert("Code reçu incorrect. Réessayez !");
+      }
+    }
+  </script>
+</body>
+</html>
